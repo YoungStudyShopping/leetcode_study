@@ -13,6 +13,8 @@
 
 ## 회사별 문제
 
+<details>
+ 
 ### LinkedIn(39)
 * 1 Two Sum 23.0% Easy
 * 21 Merge Two Sorted Lists 35.4% Easy
@@ -641,3 +643,4 @@
 * 237 Delete Node in a Linked List 43.7% Easy
 * 258 Add Digits 48.4% Easy
 * 292 Nim Game 52.7% Easy
+</details>
