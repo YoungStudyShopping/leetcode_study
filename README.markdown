@@ -644,3 +644,10 @@
 * 258 Add Digits 48.4% Easy
 * 292 Nim Game 52.7% Easy
 </details>
+
+<br>
+
+## How could we spread out idea in real situation?
+<a href="https://youtu.be/mjZpZ_wcYFg" >
+   <img src="https://user-images.githubusercontent.com/20942871/109521261-78103580-7af0-11eb-9c43-92668c1bd1a2.png" width="30%" />
+</a>
