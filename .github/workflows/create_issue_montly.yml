@@ -1,0 +1,32 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Create issue montly
+
+# Controls when the action will run.
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  create_issue:
+    name: Create issue montly
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Set env
+        run: echo "YYYY_MM=$(date +'%Y-%m')" >> $GITHUB_ENV
+
+      - name: Create issue
+        uses: imjohnbo/issue-bot@v3.0
+        with:
+          # occidere, zxzl, seungdols, minSW, geonyeongkim, SooDevv, holysinger, iannamkr, SeonCheol, tmfdk333
+          assignees: "occidere"
+          labels: "Easy, Medium, Hard"
+          title: "${{ env.YYYY_MM }}"
+          body: ${{ env.YYYY_MM }} 월 알고리즘 자율 풀이
+          pinned: false
+          close-previous: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.CREATE_ISSUE_TOKEN }}
