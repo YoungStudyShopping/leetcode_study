@@ -1,11 +1,11 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Create issue montly
 
-# Controls when the action will run.
 on:
   schedule:
-    - cron: '0 0 1 * *'
+    # Run every 00:00 on 1st day of month in KST
+    - cron: '0 15 30 4,6,9,11 *'
+    - cron: '0 15 31 1,3,5,7,8,10,12 *'
+    - cron: '0 15 28 2 *'
   workflow_dispatch:
 
 jobs:
@@ -21,11 +21,10 @@ jobs:
       - name: Create issue
         uses: imjohnbo/issue-bot@v3.0
         with:
-          # occidere, zxzl, seungdols, minSW, geonyeongkim, SooDevv, holysinger, iannamkr, SeonCheol, tmfdk333
-          assignees: "occidere"
+          assignees: "occidere, zxzl, seungdols, minSW, geonyeongkim, SooDevv, holysinger, iannamkr, SeonCheol, tmfdk333"
           labels: "Easy, Medium, Hard"
-          title: "${{ env.YYYY_MM }}"
-          body: ${{ env.YYYY_MM }} 월 알고리즘 자율 풀이
+          title: "${{ env.YYYY_MM }}월"
+          body: ${{ env.YYYY_MM }}월 알고리즘 자율 풀이
           pinned: false
           close-previous: false
         env:
